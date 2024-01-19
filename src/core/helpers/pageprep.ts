@@ -1,9 +1,9 @@
-import e from "express";
 import paytabs from "paytabs_pt2"
+import {paymentoptions} from "../../types/type";
+function createPaymentPage(paymentoptions:paymentoptions, context: any) {
 
-function createPaymentPage(region: string,method:string, context: any) {
-
-
+    const method = paymentoptions.method;
+    const region = paymentoptions.region;
     const profileID = process.env.PAYTABS_PROFILE_ID;
 
     const serverKey = process.env.PAYTABS_SERVER_KEY;
